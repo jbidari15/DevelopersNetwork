@@ -7,8 +7,11 @@ const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
 const passport = require("passport");
 
-//load Input Validation
+//load Register Validation
 const validateRegisterInput = require("../../validation/register");
+
+//load Login validation
+const validateLoginInput = require("../../validation/login");
 
 // route for registering /api/user/register
 router.post("/register", (req, res) => {
@@ -53,12 +56,18 @@ router.post("/register", (req, res) => {
 
 //route for login  /api/user/login
 router.post("/login", (req, res) => {
+  const { errors, isValid } = validateLoginInput(req.body);
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
   const email = req.body.email;
   const password = req.body.password;
 
   User.findOne({ email }).then(user => {
     if (!user) {
-      return res.status(401).json({ msg: "Auth failed" });
+      errors.email = "User not found";
+      return res.status(401).json(errors);
     }
     bcrypt.compare(password, user.password).then(isMatched => {
       if (isMatched) {
@@ -71,7 +80,8 @@ router.post("/login", (req, res) => {
           });
         });
       } else {
-        res.status(400).json({ password: "Password Incorrect" });
+        errors.password = "Password Incorrect";
+        res.status(400).json(errors);
       }
       git;
     });
