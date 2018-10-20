@@ -83,7 +83,7 @@ router.post("/login", (req, res) => {
         errors.password = "Password Incorrect";
         res.status(400).json(errors);
       }
-      git;
+    
     });
   });
 });
