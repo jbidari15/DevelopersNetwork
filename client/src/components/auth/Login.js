@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import classnames from "classnames";
 import { loginUser } from "../../actions/authActions";
 import { getErrors, getAuthentication } from "../../reducers";
+import TextFieldGroup from "../common/TextFieldGroup";
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -13,13 +14,8 @@ class Login extends Component {
       errors: {}
     };
   }
-  componentDidMount() {
-    if (this.props.isAuthenticated) {
-      this.props.history.push("/dashboard");
-    }
-  }
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.isAuthenticated) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.isAuthenticated !== this.props.isAuthenticated) {
       this.props.history.push("/dashboard");
     }
   }
@@ -45,39 +41,23 @@ class Login extends Component {
               <p className="lead text-center">
                 Sign in to your DevConnector account
               </p>
-              <form onSubmit={this.onSubmit}>
-                <div className="form-group">
-                  <input
-                    className={classnames("form-control form-control-lg", {
-                      "is-invalid": errors.loginEmail
-                    })}
-                    placeholder="Email Address"
-                    name="email"
-                    type="email"
-                    value={this.state.email}
-                    onChange={this.onChange}
-                  />
-                  {errors.loginEmail && (
-                    <div className="invalid-feedback">{errors.loginEmail}</div>
-                  )}
-                </div>
-                <div className="form-group">
-                  <input
-                    className={classnames("form-control form-control-lg", {
-                      "is-invalid": errors.loginPassword
-                    })}
-                    placeholder="Password"
-                    name="password"
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.onChange}
-                  />
-                  {errors.loginPassword && (
-                    <div className="invalid-feedback">
-                      {errors.loginPassword}
-                    </div>
-                  )}
-                </div>
+              <form noValidate onSubmit={this.onSubmit}>
+                <TextFieldGroup
+                  placeholder="Email Address"
+                  name="email"
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.onChange}
+                  error={errors.loginEmail}
+                />
+                <TextFieldGroup
+                  placeholder="Password"
+                  name="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.onChange}
+                  error={errors.loginPassword}
+                />
                 <div className="form-group">
                   <input
                     type="submit"

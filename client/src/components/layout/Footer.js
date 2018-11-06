@@ -1,5 +1,4 @@
 import React from "react";
-import { copyFile } from "fs";
 
 export default function() {
   return (
