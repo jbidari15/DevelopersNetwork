@@ -9,7 +9,6 @@ export default combineReducers({
   profile: profileReducer
 });
 
-export const getAuth = state => state.auth;
 export const getErrors = state => state.errors;
 export const getAuthentication = state => state.auth.isAuthenticated;
 export const getUser = state => state.auth.user;
