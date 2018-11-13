@@ -13,7 +13,7 @@ import isEmpty from "../../validation/is-empty";
 class CreateProfile extends Component {
   constructor(props) {
     super(props);
-    const { profile } = this.props;
+
     this.state = {
       displaySocialInputs: false,
       handle: "",
