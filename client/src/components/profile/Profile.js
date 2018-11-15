@@ -30,10 +30,6 @@ class Profile extends Component {
     const { profile, loading } = this.props.profile;
     let profileContent;
 
-    if (profile !== null) {
-      console.log(profile);
-    }
-
     if (
       profile !== null &&
       profile !== undefined &&
