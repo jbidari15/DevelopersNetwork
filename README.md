@@ -13,11 +13,11 @@ Live Demo: https://connectdevelopers.herokuapp.com/
   
   ## Technologies used
 
-* [Reactjs](https://reactjs.org/docs/getting-started.html) - The front end framework used
-* [ReduxJS](https://redux.js.org/) - Used for state management for Fron end
-* [Nodejs](https://nodejs.org/en/docs/) - For creating Server
-* [MongoDB](https://docs.mongodb.com/) - Used for creating database
-* [PassportJS](http://www.passportjs.org/docs/) - Authentication
+* [Reactjs](https://reactjs.org/docs/getting-started.html) 
+* [ReduxJS](https://redux.js.org/) 
+* [Nodejs](https://nodejs.org/en/docs/) 
+* [MongoDB](https://docs.mongodb.com/) 
+* [PassportJS](http://www.passportjs.org/docs/) 
   
 
 ### Installing
