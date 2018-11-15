@@ -1,6 +1,5 @@
-// mongoURI is created by mLab after creating a database
-const db = {
-  mongoURI: "mongodb://jkb:async1@ds213053.mlab.com:13053/devconnector",
-  secret: "secret"
-};
-module.exports = db;
+if (process.env.NODE_ENV === "production") {
+  module.exports = require("./keys_prod");
+} else {
+  module.exports = require("./keys_dev");
+}
