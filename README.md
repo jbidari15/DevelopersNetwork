@@ -63,7 +63,7 @@ Live Demo: https://connectdevelopers.herokuapp.com/
 
 ## Author
 
-* **Jaya Kumar Bidari)** - [jbidari15]
+* **Jaya Kumar Bidari** - [jbidari15]
 
 
 ## License
