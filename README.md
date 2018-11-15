@@ -25,8 +25,17 @@ Live Demo: https://connectdevelopers.herokuapp.com/
 
 ```
 > git clone https://github.com/jbidari15/DevelopersNetwork
-> npm install (installs the dependencies for both front-end and back-end)
-> npm run dev (this one starts the front-end and back-end server)
+> npm install (installs the dependencies for back-end)
+>cd client
+>npm install (installs the dependencies for front-end)
+>cd ..(get out of client)
+>Before running the project set up your mLab account for database and create file named Keys_dev.js with the following code 
+>const db = {
+  mongoURI: "YOUR MONGO URI",
+  secret: "your secret keyword"
+};
+module.exports = db;
+> npm run dev (this one starts the front-end and back-end server together as concurrently is used for development)
 
 ```
 ### List of API used
