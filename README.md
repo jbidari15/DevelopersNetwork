@@ -11,7 +11,7 @@ Live Demo: https://connectdevelopers.herokuapp.com/
   - Edit and Update their Profile
   - Create a Post , add comment on other's post , like and dislike other's post
   
-  ##Technologies used
+  ## Technologies used
 
 * [Reactjs](https://reactjs.org/docs/getting-started.html) - The front end framework used
 * [ReduxJS](https://redux.js.org/) - Used for state management for Fron end
@@ -28,7 +28,7 @@ Live Demo: https://connectdevelopers.herokuapp.com/
 > npm install (installs the dependencies for both front-end and back-end)
 > npm run dev (this one starts the front-end and back-end server)
 
-
+```
 ### List of API used
 
 #### User API
